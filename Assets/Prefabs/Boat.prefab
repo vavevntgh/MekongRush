@@ -9,6 +9,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 6709377346820139564}
+  - component: {fileID: 8663590241951715039}
   m_Layer: 0
   m_Name: Boat
   m_TagString: Untagged
@@ -31,6 +32,19 @@ Transform:
   m_Father: {fileID: 0}
   m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!65 &8663590241951715039
+BoxCollider:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 6709377346820139565}
+  m_Material: {fileID: 0}
+  m_IsTrigger: 1
+  m_Enabled: 0
+  serializedVersion: 2
+  m_Size: {x: 2.23, y: 1.52, z: 5.85}
+  m_Center: {x: 0.86, y: 0.38, z: 0.96}
 --- !u!1001 &6709377347793208689
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -44,15 +58,15 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 400000, guid: 1217ef434f72d6240876e9a2a9af2fa7, type: 3}
       propertyPath: m_LocalPosition.x
-      value: 7.02
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 400000, guid: 1217ef434f72d6240876e9a2a9af2fa7, type: 3}
       propertyPath: m_LocalPosition.y
-      value: 0.59682
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 400000, guid: 1217ef434f72d6240876e9a2a9af2fa7, type: 3}
       propertyPath: m_LocalPosition.z
-      value: 34.95
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 400000, guid: 1217ef434f72d6240876e9a2a9af2fa7, type: 3}
       propertyPath: m_LocalRotation.x
