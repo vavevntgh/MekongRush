@@ -562,6 +562,52 @@ SkinnedMeshRenderer:
     m_Center: {x: -0.008353937, y: 0.32547957, z: 0.104237065}
     m_Extent: {x: 0.047421668, y: 0.011944652, z: 0.011427484}
   m_DirtyAABB: 0
+--- !u!1 &183503793
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 183503795}
+  - component: {fileID: 183503794}
+  m_Layer: 0
+  m_Name: Controller
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!114 &183503794
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 183503793}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 843255be311a27c4db4ead3bf3eefe7c, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  play_Button: {fileID: 548204252}
+  Exit_Button: {fileID: 1655599276}
+  score_Text: {fileID: 1153540544}
+--- !u!4 &183503795
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 183503793}
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: 850.42065, y: 569.08466, z: 730.5896}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_Children: []
+  m_Father: {fileID: 0}
+  m_RootOrder: 6
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &188910699
 GameObject:
   m_ObjectHideFlags: 0
@@ -1194,7 +1240,7 @@ GameObject:
   - component: {fileID: 548204255}
   - component: {fileID: 548204254}
   m_Layer: 5
-  m_Name: Button
+  m_Name: Button Play
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -1388,7 +1434,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   anim: {fileID: 0}
-  speed: 1
+  speed: 0
   rotationSpeed: 100
   currentSpeed: 0
 --- !u!95 &592231560
@@ -3608,7 +3654,7 @@ GameObject:
   - component: {fileID: 1655599279}
   - component: {fileID: 1655599278}
   m_Layer: 5
-  m_Name: Button (1)
+  m_Name: Button Exit
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
