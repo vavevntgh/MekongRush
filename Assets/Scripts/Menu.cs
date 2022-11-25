@@ -15,7 +15,7 @@ public class Menu : MonoBehaviour
     {
         play_Button.GetComponent<Button>().onClick.AddListener(delegate {PlayButton();});
         Exit_Button.GetComponent<Button>().onClick.AddListener(delegate {ExitButton();});
-        score_Text.text = bestScore.ToString() ;
+        GetBestScore();
     }
 
     // Update is called once per frame
@@ -26,6 +26,7 @@ public class Menu : MonoBehaviour
 
     void GetBestScore(){
         bestScore = PlayerPrefs.GetInt("BestScore",0);
+        score_Text.text = bestScore.ToString() ;
     }
 
     // * *

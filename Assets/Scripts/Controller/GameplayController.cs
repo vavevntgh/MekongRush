@@ -36,14 +36,17 @@ public class GameplayController : MonoBehaviour
     }
 
     // Hub
-    public TMPro.TMP_Text time_Text , Score_Text ;
+    public TMPro.TMP_Text time_Text , score_Text ;
     // Canvas
     public GameObject hub_Canva , endScreen_Canva , playagain_Button , menu_Button ;
-    public TMPro.TMP_Text status_Text , score_Text ;
+    public TMPro.TMP_Text status_Text , scoreEnd_Text ;
  
     public float timeStart ;
-    [HideInInspector] public float timeleft ;
-    [HideInInspector] public int score ;
+    [HideInInspector] public float timeleft {get ; private set ;}
+    [HideInInspector] public int score {get ; private set ;}
+    [Space]
+    [SerializeField] private int add_Score ;
+    [SerializeField] private int add_Time ;
 
     // Start is called before the first frame update
     void Start()
@@ -66,7 +69,7 @@ public class GameplayController : MonoBehaviour
                 {
                     timeleft -= Time.deltaTime;
                     time_Text.text = TimeFormat(((int)timeleft));
-                    Score_Text.text = score.ToString() ;
+                    score_Text.text = score.ToString() ;
 
                 }else{
                     status = PlayerStatus.Lose;
@@ -86,11 +89,17 @@ public class GameplayController : MonoBehaviour
         hub_Canva.SetActive(true);
         endScreen_Canva.SetActive(false);
     } 
-    void SetEndScreen(PlayerStatus s){
-        hub_Canva.SetActive(false);
-        endScreen_Canva.SetActive(true);
 
-        Score_Text.text = score.ToString() ;
+    void SetEndScreen(PlayerStatus s){
+ 
+        if(score > PlayerPrefs.GetInt("BestScore",0)){
+            PlayerPrefs.SetInt("BestScore",score);
+        }
+
+
+        scoreEnd_Text.text = "You score : " + score.ToString() ;
+        hub_Canva.SetActive(false);
+        endScreen_Canva.SetActive(true); 
         switch (s)
         {
             case PlayerStatus.Lose : 
@@ -98,15 +107,20 @@ public class GameplayController : MonoBehaviour
                 Debug.Log("Die");
             break;
             case PlayerStatus.Win : 
-                status_Text.text = "you Win" ;
+                status_Text.text = "You Win" ;
                 Debug.Log("Win");
             break;
         }
 
-        if(score > PlayerPrefs.GetInt("BestScore",0)){
-            PlayerPrefs.SetInt("BestScore",score);
-        }
 
+    }
+
+    public void AddScore(){
+        score += add_Score ;
+    }
+
+    public void AddTime(){
+        timeleft += add_Time ;
     }
 
     void MenuButton(){

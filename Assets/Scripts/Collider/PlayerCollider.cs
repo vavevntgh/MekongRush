@@ -5,24 +5,23 @@ using UnityEngine;
 public class PlayerCollider : MonoBehaviour
 {
 
-    public GameplayController gameplay ;
-
-    // Start is called before the first frame update
-    void Start()
-    {
-        
-    }
-
-    // Update is called once per frame
-    void Update()
-    {
-        
-    }
+    public GameplayController gameplay ; 
 
     private void OnTriggerEnter(Collider other)
     { 
+        Debug.Log(other.tag );
+
         if(other.tag == "Enemy"){
             gameplay.status = PlayerStatus.Lose ;
+        }
+        if(other.tag == "Score"){ 
+            gameplay.AddScore();
+        }
+        if(other.tag == "Time"){
+            gameplay.AddTime();
+        }
+        if(other.tag == "Win"){
+            gameplay.status = PlayerStatus.Win ;
         }
     }
 }
